@@ -266,3 +266,25 @@ int timLoaiHH(dsLoaiHH ds,loaiHH*& loai)
 	else
 		cout << "lua chon sai"<<luaChon;
 }
+int xoaDauHH(dsLoaiHH ds)
+{
+	if (ds.first == NULL)
+	{
+		return -1;
+	}
+	ds.first = ds.first->next;
+	ds.first->pre = NULL;
+	return 1;
+
+}
+int xoaCuoiHH(dsLoaiHH ds)
+{
+	if (ds.first == NULL)
+	{
+		return -1; 
+	}
+	ds.last = ds.last->pre;
+	ds.last->pre = NULL;
+		return 1;
+
+}
